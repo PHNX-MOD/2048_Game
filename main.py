@@ -44,7 +44,7 @@ def check_for_empty_cell(lov):
     game_is_still_on = True
 
 def check_if_won(lov):
-  indices = [i for i, x in enumerate(lov) if x == 8]
+  indices = [i for i, x in enumerate(lov) if x == 2048]
   global game_is_still_on
   if indices==[]:
     game_is_still_on = True
@@ -71,6 +71,8 @@ def main():
   while True:
     print(input_the_move(lov))
     check_for_empty_cell(lov)
+    if game_is_still_on is False:
+      break
     print(check_if_won(lov))
     if game_is_still_on is False:
       break

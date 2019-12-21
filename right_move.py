@@ -56,6 +56,12 @@ def adding_and_conditions_to_the_right(lov, n=None):
         lov[n - 1] = lov[n - 2] + lov[n - 3]
         lov[n - 2] = "."
         lov[n - 3] = "."
+    #thisone
+    elif lov[n] != lov[n - 1] and lov[n - 1] == lov[n - 2] and lov[n - 1] != lov[n - 3]:
+        lov[n] = lov[n]
+        lov[n - 1] = lov[n - 1] + lov[n - 2]
+        lov[n - 2] = lov[n-3]
+        lov[n - 3] = "."
 
 
     elif lov[n] == lov[n - 1] and lov[n] != lov[n - 2] and lov[n - 3] == ".":
@@ -92,6 +98,53 @@ def adding_and_conditions_to_the_right(lov, n=None):
         lov[n - 1] = lov[n - 1] + lov[n - 2]
         lov[n - 2] = lov[n - 3]
         lov[n - 3] = "."
+
+    #this one
+    elif lov[n] != lov[n-1] and lov[n - 1] != lov[n - 2] and lov[n - 2] == lov[n - 3]:
+        lov[n] = lov[n]
+        lov[n - 1] = lov[n - 1]
+        lov[n - 2] = lov[n - 2] + lov[n - 3]
+        lov[n - 3] = "."
+    #this one
+    elif lov[n] == lov[n - 1] and lov[n] != lov[n - 2] and lov[n - 2] != lov[n - 3]:
+        lov[n] = lov[n] +lov[n - 1]
+        lov[n - 1] = lov[n - 2]
+        lov[n - 2] = lov[n - 3]
+        lov[n - 3] = "."
+    #this one
+    elif lov[n] != lov[n-2] and lov[n-1] == "." and lov[n-3] == ".":
+        lov[n] = lov[n]
+        lov[n - 1] = lov[n - 2]
+        lov[n - 2] = "."
+        lov[n - 3] = "."
+    #this one
+    elif lov[n] != lov[n-3] and lov[n-1] == "." and lov[n] == lov[n-2]:
+        lov[n] = lov[n] + lov[n-2]
+        lov[n - 1] = lov[n - 3]
+        lov[n - 2] = "."
+        lov[n - 3] = "."
+    # this one
+    elif lov[n] != lov[n - 1] and lov[n - 1] == lov[n - 3] and lov[n - 2] == ".":
+        lov[n] = lov[n]
+        lov[n - 1] = lov[n - 1] + lov[n - 3]
+        lov[n - 2] = "."
+        lov[n - 3] = "."
+    #this one
+    elif lov[n] != lov[n - 2] and lov[n - 2] == lov[n - 3] and lov[n - 1] == ".":
+        lov[n] = lov[n]
+        lov[n - 1] = lov[n - 2] + lov[n - 3]
+        lov[n - 2] = "."
+        lov[n - 3] = "."
+    # this one
+    elif lov[n] != lov[n - 2] and lov[n - 1] == "." and lov[n - 2] != lov[n-3]:
+        lov[n] = lov[n]
+        lov[n - 1] = lov[n - 2]
+        lov[n - 2] = lov[n - 3]
+        lov[n - 3] = "."
+
+
+
+
 
     elif lov[n - 1] == "." and lov[n - 3] == "." and lov[n] != lov[n - 2]:
         lov.insert(n - 1, lov.pop(n - 2))

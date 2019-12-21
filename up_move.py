@@ -56,8 +56,15 @@ def adding_and_conditions_to_the_up(lov, n=None):
         lov[n + 4] = lov[n + 8] + lov[n + 12]
         lov[n + 8] = "."
         lov[n + 12] = "."
-
-
+        
+    #this one
+    elif lov[n] != lov[n + 4] and lov[n + 4] == lov[n + 8] and lov[n + 4] != lov[n + 12]:
+        lov[n] = lov[n]
+        lov[n + 4] = lov[n + 4] + lov[n + 8]
+        lov[n + 8] = lov[n + 12]
+        lov[n + 12] = "."
+    
+    
     elif lov[n] == lov[n + 4] and lov[n] != lov[n + 8] and lov[n + 12] == ".":
         lov[n] = lov[n] + lov[n + 4]
         lov[n + 4] = lov[n + 8]
@@ -91,6 +98,52 @@ def adding_and_conditions_to_the_up(lov, n=None):
         lov[n + 4] = lov[n + 4] + lov[n + 8]
         lov[n + 8] = lov[n + 12]
         lov[n + 12] = "."
+
+     #this one
+    elif lov[n] != lov[n + 4] and lov[n + 4] != lov[n + 8] and lov[n + 8] == lov[n + 12]:
+        lov[n] = lov[n]
+        lov[n + 4] = lov[n + 4]
+        lov[n + 8] = lov[n + 8] + lov[n + 12]
+        lov[n + 12] = "."
+    
+    # this one
+    elif lov[n] == lov[n + 4] and lov[n] != lov[n + 8] and lov[n + 8] != lov[n + 12]:
+        lov[n] = lov[n] + lov[n + 4]
+        lov[n + 4] = lov[n + 8]
+        lov[n + 8] = lov[n + 12]
+        lov[n + 12] = "."
+    # this one
+    elif lov[n] != lov[n + 8] and lov[n + 4] == "." and lov[n + 12] == ".":
+        lov[n] = lov[n]
+        lov[n + 4] = lov[n + 8]
+        lov[n + 8] = "."
+        lov[n + 12] = "."
+        
+    # this one
+    elif lov[n] != lov[n + 12] and lov[n + 4] == "." and lov[n] == lov[n + 8]:
+        lov[n] = lov[n] + lov[n + 8]
+        lov[n + 4] = lov[n + 12]
+        lov[n + 8] = "."
+        lov[n + 12] = "."
+    # this one
+    elif lov[n] != lov[n + 4] and lov[n + 4] == lov[n + 12] and lov[n + 8] == ".":
+        lov[n] = lov[n]
+        lov[n + 4] = lov[n + 4] + lov[n + 12]
+        lov[n + 8] = "."
+        lov[n + 12] = "."
+    #this one
+    elif lov[n] != lov[n + 8] and lov[n + 8] == lov[n + 12] and lov[n + 4] == ".":
+        lov[n] = lov[n]
+        lov[n + 4] = lov[n + 8] + lov[n + 12]
+        lov[n + 8] = "."
+        lov[n + 12] = "."
+        # this one
+    elif lov[n] != lov[n + 8] and lov[n + 4] == "." and lov[n + 8] != lov[n + 12]:
+        lov[n] = lov[n]
+        lov[n + 4] = lov[n + 8]
+        lov[n + 8] = lov[n + 12]
+        lov[n + 12] = "."
+
 
     elif lov[n + 4] == "." and lov[n + 12] == "." and lov[n] != lov[n + 8]:
         lov.insert(n + 4, lov.pop(n + 8))
