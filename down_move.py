@@ -1,3 +1,29 @@
+def display_board(lov):
+  if not ((isinstance, list) and len(lov)) == 16:
+    raise ValueError("invalid argument")
+
+  output = ""
+  output += "+-+-+-+-+\n"
+  for row_index in range(4):
+    row = lov[row_index * 4:row_index * 4 + 4]
+    output += "|{0}|{1}|{2}|{3}| \n".format(*row)
+    output += "+-+-+-+-+\n"
+
+  return output
+
+def display_board(lov):
+  if not ((isinstance, list) and len(lov)) == 16:
+    raise ValueError("invalid argument")
+
+  output = ""
+  output += "+-+-+-+-+\n"
+  for row_index in range(4):
+    row = lov[row_index * 4:row_index * 4 + 4]
+    output += "|{0}|{1}|{2}|{3}| \n".format(*row)
+    output += "+-+-+-+-+\n"
+
+  return output
+
 def move_to_the_down(lov, n=None):
     if lov[n] == "." and lov[n - 4] == "." and lov[n - 8] == "." and lov[n - 12] == ".":
         pass

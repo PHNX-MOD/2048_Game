@@ -1,3 +1,16 @@
+def display_board(lov):
+  if not ((isinstance, list) and len(lov)) == 16:
+    raise ValueError("invalid argument")
+
+  output = ""
+  output += "+-+-+-+-+\n"
+  for row_index in range(4):
+    row = lov[row_index * 4:row_index * 4 + 4]
+    output += "|{0}|{1}|{2}|{3}| \n".format(*row)
+    output += "+-+-+-+-+\n"
+
+  return output
+
 def move_to_the_right(lov, n=None):
     if lov[n] == "." and lov[n - 1] == "." and lov[n - 2] == "." and lov[n - 3] == ".":
         pass
@@ -98,12 +111,12 @@ def adding_and_conditions_to_the_right(lov, n=None):
 
 
 def right_movement(lov):
-    move_to_the_right(lov, n=0)
-    adding_and_conditions_to_the_right(lov, n=0)
-    move_to_the_right(lov, n=4)
-    adding_and_conditions_to_the_right(lov, n=4)
-    move_to_the_right(lov, n=8)
-    adding_and_conditions_to_the_right(lov, n=8)
-    move_to_the_right(lov, n=12)
-    adding_and_conditions_to_the_right(lov, n=12)
+    move_to_the_right(lov, n=3)
+    adding_and_conditions_to_the_right(lov, n=3)
+    move_to_the_right(lov, n=7)
+    adding_and_conditions_to_the_right(lov, n=7)
+    move_to_the_right(lov, n=11)
+    adding_and_conditions_to_the_right(lov, n=11)
+    move_to_the_right(lov, n=15)
+    adding_and_conditions_to_the_right(lov, n=15)
     return display_board(lov)
